@@ -18,13 +18,13 @@ let game = false,randomNumber;
 
 const startGame = (chat) => {
     randomNumber = Math.floor(Math.random() * 100) + 1;
-    bot.sendMessage(chat, `Сейчас я загадал цыфру от 1 до 100, ты должен его угадать. 
+    bot.sendMessage(chat, `Сейчас я загадал цифру от 1 до 100, ты должен его угадать. 
     Если оно будет больше загаданной цифры, я напишу "Много", если меньше "Мало". Ну! Пиши цифру!`);
     game = true;
 }
 
 const gameOver = (chat) => {
-    bot.sendMessage(chat, `Ех, жаль, цыфра была ${randomNumber}` , buttonOptions.gameAgainLoseButtonOptions);
+    bot.sendMessage(chat, `Эх, жаль, цифра была ${randomNumber}` , buttonOptions.gameAgainLoseButtonOptions);
     game = false;
 }
 
