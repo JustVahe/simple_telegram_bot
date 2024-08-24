@@ -25,7 +25,7 @@ const startGame = (chat) => {
 
 const gameOver = (chat) => {
     bot.sendMessage(chat, `Ех, жаль, цыфра была ${randomNumber}` , buttonOptions.gameAgainLoseButtonOptions);
-    game = true;
+    game = false;
 }
 
 const start = () => {
@@ -45,7 +45,7 @@ const start = () => {
 
             const num = parseInt(text);
 
-            console.log(randomNumber);
+            console.log(num);
 
             if (num == randomNumber) {
                 return await bot.sendMessage(chat, `Ну и ну, угадал мерзавец!`, buttonOptions.gameAgainWinButtonOptions);
@@ -54,8 +54,10 @@ const start = () => {
             } else if (num > randomNumber) {
                 return await bot.sendMessage(chat, `Много`, buttonOptions.gameSurrenderButtonOptions);
             }
+        } else {
+            return await bot.sendMessage(chat, "Да что ты чёрт побери такое несёшь????");
         }
-        return await bot.sendMessage(chat, "Да что ты чёрт побери такое несёшь????")
+        
     });
 
     bot.on("callback_query", async msg => {
