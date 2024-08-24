@@ -6,8 +6,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.listen(port, (req, res) => {
-    res.status(200).json("Bot is alive");
+app.listen(port, () => {
+    console.log("Bot is alive")
 })
  
 
