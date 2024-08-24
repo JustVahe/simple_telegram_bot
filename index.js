@@ -18,7 +18,7 @@ let game = false,randomNumber;
 
 const startGame = (chat) => {
     randomNumber = Math.floor(Math.random() * 100) + 1;
-    bot.sendMessage(chat, `Сейчас я отгадал цыфру от 1 до 100, ты должен его угадать. 
+    bot.sendMessage(chat, `Сейчас я загадал цыфру от 1 до 100, ты должен его угадать. 
     Если оно будет больше загаданной цифры, я напишу "Много", если меньше "Мало". Ну! Пиши цифру!`);
     game = true;
 }
@@ -44,8 +44,6 @@ const start = () => {
         } if (game) {
 
             const num = parseInt(text);
-
-            console.log(num);
 
             if (num == randomNumber) {
                 return await bot.sendMessage(chat, `Ну и ну, угадал мерзавец!`, buttonOptions.gameAgainWinButtonOptions);
