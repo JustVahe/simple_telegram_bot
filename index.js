@@ -1,6 +1,15 @@
 const dotenv = require("dotenv");
 const TelegramApi = require("node-telegram-bot-api");
+const express = require("express");
 dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.listen(port, (req, res) => {
+    res.status(200).json("Bot is alive");
+})
+ 
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new TelegramApi(token, { polling: true });
