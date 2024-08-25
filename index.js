@@ -9,6 +9,10 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log("Bot is alive")
 })
+
+app.get("/", (req, res) => {
+    return res.status(200).send("Bot is live");
+})
  
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
